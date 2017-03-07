@@ -11,6 +11,7 @@
   sql/index
   office/index
   sphinx/index
+  soft/index
 
      
 .. |br| raw:: html

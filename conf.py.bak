@@ -47,7 +47,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'sphinx'
+# project = u'∇Nablarch for commercial '
 copyright = u'2010-' + str(date.today().year) + u', koyi Inc'
 author = u'koyi Inc'
 
@@ -75,7 +75,7 @@ language = 'ja'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -221,14 +221,13 @@ latex_elements = {
 # Latex figure (float) alignment
 #'figure_align': 'htbp',
 }
-# numpydoc_show_class_members = False
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'Nablarch.tex', u'sphinx Documentation',
-     u'ko', 'manual'),
+  (master_doc, 'Nablarch.tex', u'Nablarch解説書 Documentation',
+   u'TIS Inc', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -257,7 +256,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sphinx', u'sphinx Documentation',
+    (master_doc, 'nablarch', u'Nablarch解説書 Documentation',
      [author], 1)
 ]
 
@@ -271,9 +270,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-   (master_doc, 'sphinx', u'sphinx Documentation',
-     author, 'sphinx', 'One line description of project.',
-     'Miscellaneous'),
+  (master_doc, 'Nablarch', u'Nablarch解説書 Documentation',
+   author, 'Nablarch', 'One line description of project.',
+   'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
