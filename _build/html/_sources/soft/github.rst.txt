@@ -14,7 +14,8 @@ Github Pagesを使えば、個人や組織のウェブサイト、リポジト�
 
  http://sphinx-users.jp/cookbook/hosting/ |br|
  http://qiita.com/key-amb/items/4f799fed51734987f3c5 |br|
- http://qiita.com/syui/items/c429277ad4d357032d5e
+ http://qiita.com/syui/items/c429277ad4d357032d5e |br|
+ https://github.com/nablarch/nablarch.github.io
 
 
 必要なもの
