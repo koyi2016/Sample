@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>githubの利用メモ &mdash; sphinx  ドキュメント</title>
+  <title>githubの利用メモ &mdash; sphinx  documentation</title>
   
 
   
@@ -33,8 +33,8 @@
         <link rel="index" title="索引"
               href="../genindex.html"/>
         <link rel="search" title="検索" href="../search.html"/>
-    <link rel="top" title="sphinx  ドキュメント" href="../index.html"/>
-        <link rel="up" title="ソフトインストール利用方法に関するメモ" href="index.html"/>
+    <link rel="top" title="sphinx  documentation" href="../index.html"/>
+        <link rel="up" title="ソフトメモ" href="index.html"/>
         <link rel="prev" title="sphinxのインストールメモ" href="sphinx.html"/> 
 
   
@@ -68,12 +68,19 @@
     <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../java/index.html">java学習メモ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sql/index.html">sql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../office/index.html">office学習メモ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">sphinx</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../office/index.html">Office学習メモ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../office/excel/index.html">Excelメモ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../office/excel/index.html#id1">excelでセルの値を選択できるようにリストを設定方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../office/excel/index.html#id2">同じシートの複数ページに対して、共通ヘッダーの印刷設定</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/index.html">sphinx文法</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../sphinx/index.html#url">urlの利用</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">ソフトインストール利用方法に関するメモ</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ソフトメモ</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sphinx.html">sphinxのインストールメモ</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="sphinx.html#python">pythonのインストール</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sphinx.html#javasphinx">javasphinxのインストール</a></li>
@@ -81,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">githubの利用メモ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#github-pages">Github Pagesを使ってドキュメントを公開方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#github-pages">github Pagesを使ってドキュメントを公開方法</a></li>
 </ul>
 </li>
 </ul>
@@ -130,7 +137,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">ソフトインストール利用方法に関するメモ</a> &raquo;</li>
+          <li><a href="index.html">ソフトメモ</a> &raquo;</li>
         
       <li>githubの利用メモ</li>
     
@@ -150,10 +157,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="github">
-<span id="id1"></span><h1>githubの利用メモ<a class="headerlink" href="#github" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<span id="id1"></span><h1>githubの利用メモ<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="github-pages">
-<h2>Github Pagesを使ってドキュメントを公開方法<a class="headerlink" href="#github-pages" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Github Pagesを使えば、個人や組織のウェブサイト、リポジトリのウェブサイトを作ることができます。</p>
+<h2>github Pagesを使ってドキュメントを公開方法<a class="headerlink" href="#github-pages" title="Permalink to this headline">¶</a></h2>
+<p>github Pagesを使えば、個人や組織のウェブサイト、リポジトリのウェブサイトを作ることができます。</p>
 <p>参考URL:</p>
 <blockquote>
 <div><a class="reference external" href="http://sphinx-users.jp/cookbook/hosting/">http://sphinx-users.jp/cookbook/hosting/</a> <br />
@@ -163,7 +170,7 @@
 <p>必要なもの</p>
 <blockquote>
 <div><ul class="simple">
-<li>Githubのアカウント</li>
+<li>githubのアカウント</li>
 <li>sample用リポジトリ</li>
 <li>gitまだはsourceTree</li>
 </ul>
@@ -173,7 +180,7 @@
 </ul>
 <blockquote>
 <div><ol class="arabic simple">
-<li>Github上ユーザ名.github.ioという名前のリポジトリを作成する、ローカルにタウンロード <br />
+<li>github上ユーザ名.github.ioという名前のリポジトリを作成する、ローカルにタウンロード <br />
 (ここのユーザ名は個人のアカウント名、もしくは組織名です)。</li>
 <li>Sphinxでビルドしたsampleリポジトリ中のファイルをユーザ名.github.io/docsにコピーする。</li>
 <li>.nojekyllという空のファイルをユーザ名.github.ioの配下に作成する。</li>
@@ -183,11 +190,11 @@
 <p>サンプル例： <a class="reference external" href="https://koyi2016.github.io/docs/">https://koyi2016.github.io/docs/</a>  <br />
 ソース： <a class="reference external" href="https://github.com/koyi2016/koyi2016.github.io">https://github.com/koyi2016/koyi2016.github.io</a></p>
 <div class="admonition tip">
-<p class="first admonition-title">ちなみに</p>
-<p class="last">GitHub Pages で使われている Jekyll の仕様で _static/ 配下の画像やCSSが読み込むために、.nojekyll というファイルを配置しておきました。</p>
+<p class="first admonition-title">Tip</p>
+<p class="last">gitHub Pages で使われている Jekyll の仕様で _static/ 配下の画像やCSSが読み込むために、.nojekyll というファイルを配置しておきました。</p>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">重要</p>
+<p class="first admonition-title">Important</p>
 <p>何で以下のURLでアクセス不可、その理由は？</p>
 <p>・<a class="reference external" href="https://koyi2016.github.io">https://koyi2016.github.io</a></p>
 <p class="last">※nablarchでは <a class="reference external" href="https://nablarch.github.io/">https://nablarch.github.io/</a> でアクセスできる</p>

@@ -1,8 +1,8 @@
 .. _`sphinx`:
 
-==========
-sphinx
-==========
+====================
+sphinx文法
+====================
 
 sphinxの書き方をまとめる、詳しい文法は以下のurlで参考する |br|
 http://planset-study-sphinx.readthedocs.io/ja/latest/04.html
