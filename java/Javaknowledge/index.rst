@@ -1,14 +1,18 @@
 
 
 ==================================
-Java言語基本文法
+Java言語のメモ
 ==================================
 
 .. toctree::
   :maxdepth: 1
 
-  development_environment/index
+  basic_java/index
+  object_and_class/index
+  inheritance_and_interface/index
+  exception/index 
 
+  
      
 .. |br| raw:: html
 
