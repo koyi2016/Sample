@@ -7,7 +7,9 @@ Java学習メモ
 .. toctree::
   :maxdepth: 1
 
-  Javaknowledge/index
+  javaknowledge/index
+  javaTraining/index
+  javaFramework/index
 
      
 .. |br| raw:: html

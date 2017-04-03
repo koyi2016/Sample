@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>第１章：Java実装環境と流れ &mdash; sphinx  ドキュメント</title>
+  <title>第１章：Java実装環境と流れ &mdash; sphinx  documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="索引"
               href="../../../../genindex.html"/>
         <link rel="search" title="検索" href="../../../../search.html"/>
-    <link rel="top" title="sphinx  ドキュメント" href="../../../../index.html"/>
+    <link rel="top" title="sphinx  documentation" href="../../../../index.html"/>
         <link rel="up" title="Java言語基本文法" href="../index.html"/>
         <link rel="next" title="第２章：データの宣言と使用" href="../variables_and_arrays/index.html"/>
         <link rel="prev" title="Java言語基本文法" href="../index.html"/> 
@@ -68,13 +68,15 @@
   
     <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Java学習メモ</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Java言語のメモ</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Java言語の基本知識</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html">Java言語基本文法</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../object_and_class/index.html">クラス定義とオブジェクト生成</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../inheritance_and_interface/index.html">継承とサブクラスの定義</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../exception/index.html">例外処理</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../javaTraining/index.html">Javaトレーニング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../javaFramework/index.html">Javaフレームワークの学習メモ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../sql/index.html">sql</a></li>
@@ -150,7 +152,7 @@
         
           <li><a href="../../../index.html">Java学習メモ</a> &raquo;</li>
         
-          <li><a href="../../index.html">Java言語のメモ</a> &raquo;</li>
+          <li><a href="../../index.html">Java言語の基本知識</a> &raquo;</li>
         
           <li><a href="../index.html">Java言語基本文法</a> &raquo;</li>
         
@@ -172,12 +174,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="java">
-<h1>第１章：Java実装環境と流れ<a class="headerlink" href="#java" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1>第１章：Java実装環境と流れ<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>・ Javaプログラムの作成から実行まで<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>・ Javaプログラムの作成から実行まで<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <img alt="../../../../_images/jdk.png" src="../../../../_images/jdk.png" />
 <div class="admonition tip">
-<p class="first admonition-title">ちなみに</p>
+<p class="first admonition-title">Tip</p>
 <blockquote>
 <div><p>一つのソースファイル内に複数のクラス定義を行った場合、ソースファイル内の全てのクラス定義に基づいてクラスファイルが生成される。</p>
 <p>例：sample.javaの中、三つのクラスsample, test, passを定義した場合、コンパイル時、sample,test,passのclassファイルが生成される。</p>
@@ -185,7 +187,7 @@
 <img alt="../../../../_images/sampleJava.png" class="last" src="../../../../_images/sampleJava.png" />
 </div>
 <div class="admonition important">
-<p class="first admonition-title">重要</p>
+<p class="first admonition-title">Important</p>
 <p class="last">一つのJavaソースファイルでは複数のpublicクラスを定義することができないため、public修飾子を指定した場合、ソースファイル名とクラス名を同じにしなれけばならない。</p>
 </div>
 <p>Javac Test.javaを実行する時、もしソースコードの中に、日本語がある場合、エラーになりますので、以下のように実行が必要。</p>
@@ -195,7 +197,7 @@
 <p>文字コードを指定するには「-encoding」オプションを使います。</p>
 </div>
 <div class="section" id="id2">
-<h2>・ Javaプログラム動作環境<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>・ Javaプログラム動作環境<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>特徴：Javaで一つのプログラムを作成することで、どのコンピュータ上でも動作させることができます。</p>
 <ol class="arabic simple">
 <li>JVM（Java Virtual Machine）Java仮想マシンとは：バイトコードのJavaプログラムを解釈し実行するソフトウェア。</li>
@@ -205,13 +207,13 @@
 <p>JVM、JREとJDKの範囲は以下の図で示します。</p>
 <img alt="../../../../_images/jdkHani.png" src="../../../../_images/jdkHani.png" />
 <div class="admonition important">
-<p class="first admonition-title">重要</p>
+<p class="first admonition-title">Important</p>
 <p>JDKにはJREが含まれています。つまり、Java開発環境ではJDKのインストールとPath設定が必要です。</p>
 <p class="last">参考URL:　<a class="reference external" href="http://www.task-notes.com/entry/20140810/1407599796">http://www.task-notes.com/entry/20140810/1407599796</a></p>
 </div>
 </div>
 <div class="section" id="id3">
-<h2>・ Javaプラットフォーム各エディションの特徴と説明<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>・ Javaプラットフォーム各エディションの特徴と説明<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Javaプラットフォームは、Javaで記述されたプログラムの開発および実行を行うことのできるソフトウェア群の総称。</p>
 <ol class="arabic simple">
 <li>Java SE（バージョン5.0までは Java Platform, Standard Edition または J2SE）は基礎と一部機能を提供する。</li>
@@ -219,7 +221,7 @@
 <li>Java Platform, Micro Edition (Java ME)は携帯電話、PDA、テレビのようなのリソースが制限されたデバイスにおけるJavaの小型セット。</li>
 </ol>
 <div class="admonition tip">
-<p class="first admonition-title">ちなみに</p>
+<p class="first admonition-title">Tip</p>
 <ol class="last arabic simple">
 <li>Java EEを利用するために、JavaSEが必要です。<br /></li>
 <li>Java EEはGUI関連のライブラリ（java.awtやjava.swing）以外にも、ネットワーク、スレッド、データベースアクセスなどのライブラリが用意されている</li>
@@ -227,7 +229,7 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2>・ 注意点<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>・ 注意点<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>Java開発する時、注意点をここでまとめます。</p>
 <ol class="arabic">
 <li><p class="first">Javaでは大文字と小文字は区別される。　<br /></p>
@@ -236,7 +238,7 @@
 </li>
 <li><p class="first">Javaのコメント注釈は「//」、「/* <a href="#id5"><span class="problematic" id="id6">*</span></a>/」を使う。　<br /></p>
 <div class="system-message" id="id5">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/Users/KO/work/gitDocument/sample/java/Javaknowledge/basic_java/development_environment/index.rst</tt>, line 75); <em><a href="#id6">backlink</a></em></p>
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">C:\gitDocument\sample\java\javaknowledge\basic_java\development_environment\index.rst</tt>, line 75); <em><a href="#id6">backlink</a></em></p>
 <p>Inline emphasis start-string without end-string.</p>
 </div>
 </li>
@@ -245,7 +247,7 @@
 <li><p class="first">特殊な文字の入力(エスケープシーケンス)　<br /></p>
 <blockquote>
 <div><table border="1" class="colwidths-given white-space-normal docutils" id="id7">
-<caption><span class="caption-text">例</span><a class="headerlink" href="#id7" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-text">例</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="40%" />
 <col width="60%" />
