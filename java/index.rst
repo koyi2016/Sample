@@ -14,8 +14,10 @@ Java学習メモ
 
 
 
-  :download:`メモファイル <downloadFile/javamemo.xlsx>`
-     
+:download:`Javaメモ <downloadFile/javamemo.xlsx>`
+
+
+
 .. |br| raw:: html
 
   <br />
