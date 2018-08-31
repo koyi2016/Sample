@@ -157,6 +157,10 @@ springプロジェクトに対して、サーバ起動のままソースコー�
        <artifactId>spring-boot-devtools</artifactId>
      </dependency>
 
+※それでは、デバックができなく。もう一つのプラグインを紹介する：Jrebel（変更したファイルだけをliveReloadする） |br|
+参考： https://www.zybuluo.com/weiys/note/1141626
+
+
 
 
 7. 正規表現
@@ -164,6 +168,69 @@ springプロジェクトに対して、サーバ起動のままソースコー�
 
 分かりやすく参考のURL |br|
 https://java-reference.com/java_string_regex.html
+
+
+
+8. doma-spring-bootのSQL例外変換
+--------------------------------------------------------------
+
+doma-spring-bootを利用すると、Doma2の例外クラス（JdbcException）をSpring Transactionの例外クラス（DataAccessException）に変換してくれます。
+
+例えば、doma2の排他制御が行う時、基本的にOptimisticLockExceptionがスローされますが、
+doma-spring-bootを利用される場合、実際にOptimisticLockingFailureExceptionがスローされる
+
+詳細は以下のURLを参考 |br|
+https://int128.hatenablog.com/entry/2017/01/07/020030
+
+
+
+
+9. String.isEmpty()とStringUtils.isEmplty()の区別
+------------------------------------------------------------------
+
+StringのisEmpty()は対象変数のlength()が0（つまり空文字の場合）trueを返す。|br|
+StringUtilsのisEmpty()は対象変数がnullまだは空文字の場合trueを返す
+
+.. code-block:: java
+ 
+     String str1 = null;
+     String str2 = " ";
+     
+     str1.isEmpty()  ⇒ NullPointerExceptinが発生
+     str2.isEmpty()  ⇒ true
+     
+     StringUtils.isEmpty(str1)  ⇒ true
+     StringUtils.isEmpty(str1)  ⇒ true
+
+
+
+10. Bean Validationのメモ
+------------------------------------------------------------------
+
+Bean Validation （JSR-303）は、JavaBeans のプロパティが取り得る値や条件を、精査する仕組み。Java EE6 から追加され、Java EE7 でのバージョンは1.1である。|br|
+Bean Validationの標準アノテーションのパッケージはjavax.validation.*
+
+Hibernate ValidatorはBean Validationで定義されたアノテーションに加え、独自の検証用アノテーションを提供している。|br|
+Hibernate Validatorの代表的なアノテーションのパッケージはorg.hibernate.validator.constraints.*
+
+Spring は、Java標準であるBean Validationをサポートしている。 単項目チェックには、このBean Validationを利用する。 
+相関項目チェックの場合は、Bean ValidationまたはSpringが提供しているorg.springframework.validation.Validatorインタフェースを利用する
+
+
+Nablarchでは、2種類のバリデーション機能を提供されている。|br|
+* `Java EE7のBean Validation(JSR349)に準拠したバリデーション機能 <https://nablarch.github.io/docs/LATEST/doc/application_framework/application_framework/libraries/validation/bean_validation.html>`_  |br|
+* `Nablarch独自のバリデーション機能 (Nablarch Validation) <https://nablarch.github.io/docs/LATEST/doc/application_framework/application_framework/libraries/validation/nablarch_validation.html>`_ 
+
+
+参考URL: |br|
+`Nablarchの入力チェック <https://nablarch.github.io/docs/LATEST/doc/application_framework/application_framework/libraries/validation.html>`_   |br|
+`Springの入力チェック <http://terasolunaorg.github.io/guideline/5.4.1.RELEASE/ja/ArchitectureInDetail/WebApplicationDetail/Validation.html>`_ 
+
+
+ .. tip::
+  @Validatedは、Bean Validation標準ではなく、Springの独自アノテーションである。 
+  Bean Validation標準のjavax.validation.Validアノテーションも使用できるが、
+  @Validatedは@Validに比べて、 バリデーションのグループ(順序関係)を指定できる点で優れているため、@Validatedを使用することを推奨する。
 
 
 

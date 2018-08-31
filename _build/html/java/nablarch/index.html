@@ -85,6 +85,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#spring">5. spring のリストに対して精査方法</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">6. Springプロジェクトのソースコード修正後、コンパイルだけで反映するための依存関係</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">7. 正規表現</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#doma-spring-bootsql">8. doma-spring-bootのSQL例外変換</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string-isempty-stringutils-isemplty">9. String.isEmpty()とStringUtils.isEmplty()の区別</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bean-validation">10. Bean Validationのメモ</a></li>
 </ul>
 </li>
 </ul>
@@ -329,11 +332,59 @@
 </pre></div>
 </div>
 </div></blockquote>
+<p>※それでは、デバックができなく。もう一つのプラグインを紹介する：Jrebel（変更したファイルだけをliveReloadする） <br />
+参考： <a class="reference external" href="https://www.zybuluo.com/weiys/note/1141626">https://www.zybuluo.com/weiys/note/1141626</a></p>
 </div>
 <div class="section" id="id4">
 <h2>7. 正規表現<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>分かりやすく参考のURL <br />
 <a class="reference external" href="https://java-reference.com/java_string_regex.html">https://java-reference.com/java_string_regex.html</a></p>
+</div>
+<div class="section" id="doma-spring-bootsql">
+<h2>8. doma-spring-bootのSQL例外変換<a class="headerlink" href="#doma-spring-bootsql" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>doma-spring-bootを利用すると、Doma2の例外クラス（JdbcException）をSpring Transactionの例外クラス（DataAccessException）に変換してくれます。</p>
+<p>例えば、doma2の排他制御が行う時、基本的にOptimisticLockExceptionがスローされますが、
+doma-spring-bootを利用される場合、実際にOptimisticLockingFailureExceptionがスローされる</p>
+<p>詳細は以下のURLを参考 <br />
+<a class="reference external" href="https://int128.hatenablog.com/entry/2017/01/07/020030">https://int128.hatenablog.com/entry/2017/01/07/020030</a></p>
+</div>
+<div class="section" id="string-isempty-stringutils-isemplty">
+<h2>9. String.isEmpty()とStringUtils.isEmplty()の区別<a class="headerlink" href="#string-isempty-stringutils-isemplty" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>StringのisEmpty()は対象変数のlength()が0（つまり空文字の場合）trueを返す。<br />
+StringUtilsのisEmpty()は対象変数がnullまだは空文字の場合trueを返す</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span>String str1 = null;
+String str2 = &quot; &quot;;
+
+str1.isEmpty()  ⇒ NullPointerExceptinが発生
+str2.isEmpty()  ⇒ true
+
+StringUtils.isEmpty(str1)  ⇒ true
+StringUtils.isEmpty(str1)  ⇒ true
+</pre></div>
+</div>
+</div>
+<div class="section" id="bean-validation">
+<h2>10. Bean Validationのメモ<a class="headerlink" href="#bean-validation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Bean Validation （JSR-303）は、JavaBeans のプロパティが取り得る値や条件を、精査する仕組み。Java EE6 から追加され、Java EE7 でのバージョンは1.1である。<br />
+Bean Validationの標準アノテーションのパッケージはjavax.validation.*</p>
+<p>Hibernate ValidatorはBean Validationで定義されたアノテーションに加え、独自の検証用アノテーションを提供している。<br />
+Hibernate Validatorの代表的なアノテーションのパッケージはorg.hibernate.validator.constraints.*</p>
+<p>Spring は、Java標準であるBean Validationをサポートしている。 単項目チェックには、このBean Validationを利用する。
+相関項目チェックの場合は、Bean ValidationまたはSpringが提供しているorg.springframework.validation.Validatorインタフェースを利用する</p>
+<p>Nablarchでは、2種類のバリデーション機能を提供されている。<br />
+* <a class="reference external" href="https://nablarch.github.io/docs/LATEST/doc/application_framework/application_framework/libraries/validation/bean_validation.html">Java EE7のBean Validation(JSR349)に準拠したバリデーション機能</a>  <br />
+* <a class="reference external" href="https://nablarch.github.io/docs/LATEST/doc/application_framework/application_framework/libraries/validation/nablarch_validation.html">Nablarch独自のバリデーション機能 (Nablarch Validation)</a></p>
+<p>参考URL: <br />
+<a class="reference external" href="https://nablarch.github.io/docs/LATEST/doc/application_framework/application_framework/libraries/validation.html">Nablarchの入力チェック</a>   <br />
+<a class="reference external" href="http://terasolunaorg.github.io/guideline/5.4.1.RELEASE/ja/ArchitectureInDetail/WebApplicationDetail/Validation.html">Springの入力チェック</a></p>
+<blockquote>
+<div><div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">&#64;Validatedは、Bean Validation標準ではなく、Springの独自アノテーションである。
+Bean Validation標準のjavax.validation.Validアノテーションも使用できるが、
+&#64;Validatedは&#64;Validに比べて、 バリデーションのグループ(順序関係)を指定できる点で優れているため、&#64;Validatedを使用することを推奨する。</p>
+</div>
+</div></blockquote>
 </div>
 </div>
 
